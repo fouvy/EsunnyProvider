@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18098550-40C7-46BE-8ABB-CCA416F9588F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EsunnyTradeTest</RootNamespace>
+    <AssemblyName>EsunnyTradeTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\InstallPath\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data, Version=12.0.0.0, Culture=neutral, PublicKeyToken=168890f57f637b6d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExternalLibrary\DevExpress.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils, Version=12.0.0.0, Culture=neutral, PublicKeyToken=168890f57f637b6d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExternalLibrary\DevExpress.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors, Version=12.0.0.0, Culture=neutral, PublicKeyToken=168890f57f637b6d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExternalLibrary\DevExpress.XtraEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\CalmBeltFund.Core.Trading.Esunny.EsunnyInputOrder.datasource" />
+    <None Include="Properties\DataSources\CalmBeltFund.Core.Trading.Esunny.TEsOrderInsertRspField.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalmBeltFund.Controls\CalmBeltFund.Controls.csproj">
+      <Project>{313FBB87-1FD5-4E6C-AC8D-3E4FFCCE0120}</Project>
+      <Name>CalmBeltFund.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalmBeltFund.Library\CalmBeltFund.Library.csproj">
+      <Project>{73B5EBEA-6676-4CD8-BE97-7637DB606F2B}</Project>
+      <Name>CalmBeltFund.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalmBeltFund.Trading.Controls\CalmBeltFund.Trading.Controls.csproj">
+      <Project>{7918AC8E-FDAE-4714-91DE-C51DFF35753C}</Project>
+      <Name>CalmBeltFund.Trading.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalmBeltFund.Trading\CalmBeltFund.Trading.csproj">
+      <Project>{D010D0F1-0941-462C-922F-EB7C976EBFF4}</Project>
+      <Name>CalmBeltFund.Trading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EsunnyInvoke\EsunnyInvoke.csproj">
+      <Project>{4D36FE21-8AFC-4428-8B31-AE385BCE68A8}</Project>
+      <Name>EsunnyInvoke</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EsunnyProvider\EsunnyProvider.csproj">
+      <Project>{A4E59565-EC7D-43D0-9657-554AE37291DC}</Project>
+      <Name>EsunnyProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
